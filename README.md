@@ -1,4 +1,4 @@
-### SCRAPPING FOR SENTIMENT ANALYSIS
+### SCRAPPING GOOGLE PLAYSTORE
 
 **Installation**<br>
 ```
@@ -20,13 +20,10 @@ result, token = reviews(
 )
 ```
 
-**Execution**<br>
-Sentiment Analysis menggunakan Gemini API, salah satu model yang digunakan yaitu **gemini-2.5-flash**
-```
-model = genai.GenerativeModel('gemini-2.5-flash')
-```
-Model yang digunakan free, sehingga terdapat batasan setiap running code. Oleh karena itu dapat dilihat lebih detail melalui [dokumentasi berikut](https://share.google/zQmy9uIKLW9fpBIDq)
-
 **Result**<br>
+```
+df_playstore = pd.DataFrame(np.array(result), columns=['review'])
+df_playstore = df_playstore.join(pd.DataFrame(df_playstore.pop('review').tolist()))
+```
 
 
